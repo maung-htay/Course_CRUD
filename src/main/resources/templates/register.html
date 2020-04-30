@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<title>Register</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+
+<!-- JS -->
+<script src="/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+	<div class="container">
+
+		<form th:action="@{/register}" th:object="${user}" method="post">
+
+			<br />
+			<br />
+
+			<div class="row">
+
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+					<h1>Register Form</h1>
+				</div>
+
+				<div class="col-md-2"></div>
+
+			</div>
+
+			<!-- Name -->
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+
+					<div class="form-group">
+						<label for="id_name">User Name</label> <input type="text"
+							class="form-control" id="id_name" th:field="*{name}" required>
+					</div>
+
+				</div>
+				<div class="col-md-2"></div>
+
+			</div>
+
+			<!-- Email -->
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+
+					<div class="form-group">
+						<label for="id_email">Email</label> <input type="email"
+							class="form-control" id="id_email" th:field="*{email}" required>
+					</div>
+
+				</div>
+				<div class="col-md-2"></div>
+
+			</div>
+
+
+			<!-- Password -->
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+
+					<div class="form-group">
+						<label for="id_password">Password</label> <input type="password"
+							class="form-control" id="id_password" th:field="*{password}"
+							required>
+					</div>
+
+				</div>
+				<div class="col-md-2"></div>
+
+			</div>
+
+			<!-- Phone no -->
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+
+					<div class="form-group">
+						<label for="id_phono">Phone Number</label> <input type="number"
+							class="form-control" id="id_phono" th:field="*{phono}" required>
+					</div>
+
+				</div>
+				<div class="col-md-2"></div>
+			</div>
+
+			<!-- Button -->
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-3">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+				<div class="col-md-3"><a th:href="@{/login}">Already Register</a></div>
+				<div class="col-md-4"><label th:if="!${error}" style="color:red;">Your email already exist!</label></div>
+			</div>
+
+		</form>
+
+	</div>
+
+</body>
+</html>
